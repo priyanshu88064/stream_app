@@ -1,6 +1,6 @@
 function App() {
   return (
-    <div>Priyanshu chutiya and Amul</div>
+    <div>Priyanshu chakka and Amul</div>
   );
 }
 
