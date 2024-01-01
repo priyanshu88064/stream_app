@@ -7,7 +7,7 @@ function Header(){
             </div>
             <div className="hlast">
                 <div className="slogin">STREAMER LOGIN</div>
-                <div className="login">Login</div>
+                <div className="login">LOGIN</div>
             </div>
         </div>
     );
