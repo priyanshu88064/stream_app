@@ -35,7 +35,6 @@ html,body{
 }
 
 .bpanel{
-  flex-grow: 8;
   height: 100%;
   border-right: 1px solid rgb(51, 51, 51);
 }
@@ -46,9 +45,9 @@ html,body{
 .bpaneldown{
   height: 65%;
 }
-.bcontent{
-  flex-grow: 92;
-}
+/* .bcontent{
+  flex-grow: 0;
+} */
 .streamnet{
   font-size: 25px;
   font-weight: 900;
@@ -88,17 +87,48 @@ html,body{
 }
 .item{
   display: flex;
-  padding: 20px 5px 20px 5px;
+  align-items: center;
+  padding: 15px 0px 15px 0px;
+  width: 220px;
 }
 .icon{
   width: 20%;
   text-align: center;
 }
+.icon > img{
+  width: 25px;
+  border-radius: 50%;
+}
 .itemname{
   width: 60%;
+  font-size: 14px;
 }
 .itemlive{
   width: 20%;
   color:red;
   font-size: 12px;
+  text-align: right;
+}
+.itemlive > span{
+  color: rgb(189, 189, 189);
+}
+.panel{
+  position: relative;
+  background-color: rgb(47, 47, 47);
+  background-image: url('./icons/thumbnail.jpeg');
+  background-size: cover;
+  border-radius: 10px;
+}
+.as{
+  position: absolute;
+}
+.plive{
+  top: 10px;
+  right: 20px;
+  background-color: red;
+  padding: 3px 5px 3px 5px;
+  color: white;
+  font-size: 10px;
+  font-weight: 900;
+  box-shadow: 5px 5px 10px rgb(48, 48, 48);
 }

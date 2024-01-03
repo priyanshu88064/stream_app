@@ -1,6 +1,10 @@
+import Panel from "./Panel";
+
 function BodyContent(){
     return (
-        <div className="bcontent">Body content</div>
+        <div className="bcontent">
+            <Panel zoom={30}/>
+        </div>
     );
 }
 export default BodyContent;

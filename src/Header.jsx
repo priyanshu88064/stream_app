@@ -3,7 +3,7 @@ function Header(){
         <div className="header">
             <div className="streamnet">Stream4U</div>
             <div className="searchbar">
-                <input type="text" id="search" placeholder="Search for Games,Streamers,Videos" autoComplete="off"/>
+                <input type="text" id="search" placeholder="Search for streamers,games,videos" autoComplete="off"/>
             </div>
             <div className="hlast">
                 <div className="slogin">STREAMER LOGIN</div>
