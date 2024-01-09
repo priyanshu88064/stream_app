@@ -1,5 +1,7 @@
 import Panel from "./Panel";
 import Frame from './Frame';
+import Recommended from "./Recommended";
+import Categories from "./Categories";
 
 function BodyContent(){
     return (
@@ -10,7 +12,10 @@ function BodyContent(){
                 <div className="frameright">&#x276F;</div>
             </div>
 
-            <hr/>
+            <Recommended/>
+            <Recommended/>
+            <Recommended/>
+            <Categories/>
         </div>
     );
 }
