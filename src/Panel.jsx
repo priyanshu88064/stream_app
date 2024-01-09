@@ -1,3 +1,5 @@
+import Mtitle from "./Mtitle";
+
 function Panel({zoom}){
 
     let width = zoom * 16;
@@ -5,7 +7,9 @@ function Panel({zoom}){
 
     return (
         <div className="panel" style={{width:width,height:height}}>
+            <div className="opacity"></div>
             <div className="as plive">● 2400</div>
+            <Mtitle zoom={zoom} />
         </div>
     );
 }
