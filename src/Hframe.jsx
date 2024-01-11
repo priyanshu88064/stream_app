@@ -1,12 +1,25 @@
+import HeleStats from './HeleStats';
 import Panel from './Panel';
 
-function Hframe(){
+function Hframe({thumb}){
     return (
         <div className="hframe">
-            <Panel zoom={19}/>
-            <Panel zoom={19}/>
-            <Panel zoom={19}/>
-            <Panel zoom={19}/>
+            <div className='hele'>
+                <Panel zoom={19} bg={thumb.current[0]} isLive={false}/>
+                <HeleStats/>
+            </div>
+            <div className='hele'>
+                <Panel zoom={19} bg={thumb.current[1]} isLive={false}/>
+                <HeleStats/>
+            </div>
+            <div className='hele'>
+                <Panel zoom={19} bg={thumb.current[2]} isLive={false}/>
+                <HeleStats/>
+            </div>
+            <div className='hele'>
+                <Panel zoom={19} bg={thumb.current[3]} isLive={false}/>
+                <HeleStats/>
+            </div>
         </div>
     );
 }

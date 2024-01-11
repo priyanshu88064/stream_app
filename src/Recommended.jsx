@@ -1,11 +1,11 @@
 import Hframe from "./Hframe";
 
-function Recommended(){
+function Recommended({title,thumb}){
     return (
         <div className="recommended">
             <hr/>
-            <div>RECOMMENDED</div>
-            <Hframe/>
+            <div>{title}</div>
+            <Hframe thumb={thumb}/>
         </div>
     );
 }

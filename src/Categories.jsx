@@ -1,3 +1,4 @@
+import Gamepanel from "./Gamepanel";
 import cicon from "./icons/categories.png";
 
 function Categories(){
@@ -8,7 +9,13 @@ function Categories(){
                 <div className="cheadtitle">POPULAR CATEGORIES</div>
             </div>
             <div className="cpanel">
-                panel
+                <Gamepanel/>
+                <Gamepanel/>
+                <Gamepanel/>
+                <Gamepanel/>
+                <Gamepanel/>
+                <Gamepanel/>
+                <Gamepanel/>
             </div>
         </div>
     );
