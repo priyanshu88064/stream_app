@@ -50,11 +50,11 @@ html,body{
   overflow: scroll;
 }
 /* Hide scrollbar for Chrome, Safari and Opera */
-.bcontent::-webkit-scrollbar {
+.bcontent::-webkit-scrollbar,.live::-webkit-scrollbar,.videos::-webkit-scrollbar {
   display: none;
 }
 /* Hide scrollbar for IE, Edge and Firefox */
-.bcontent {
+.bcontent,.live,.videos {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
@@ -101,6 +101,7 @@ html,body{
   padding: 9px 0px 9px 0px;
   width: 220px;
   color: rgb(172, 172, 172);
+  cursor: pointer;
 }
 .icon{
   width: 20%;
@@ -334,4 +335,38 @@ hr{
   left: 10px;
   font-size: 12px;
   padding: 3px;
+}
+.live{
+  overflow: scroll;
+  padding: 20px 25px 0 25px;
+}
+.livecontainer{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.livepanel{
+  margin-bottom: 25px;
+}
+.livet{
+  font-size: 18px;
+  margin-bottom: 30px;
+  font-weight: 500;
+}
+.videos{
+  overflow: scroll;
+  width: 100%;
+  padding: 20px 25px 0 25px;
+}
+.videocontainer{
+  display: flex;
+  flex-direction: column;
+}
+.videost{
+  font-size: 18px;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+.videospanel{
+  margin-bottom: 15px;
 }

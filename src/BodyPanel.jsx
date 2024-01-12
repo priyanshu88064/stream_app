@@ -5,6 +5,7 @@ import videoicon from "./icons/videos.svg"
 import gameicon from "./icons/game.svg"
 import jonnyicon from "./icons/jonathan.jpg"
 import recicon from "./icons/recommended.svg"
+import { Link } from "react-router-dom";
 
 function BodyPanel(){
     return (
