@@ -13,9 +13,9 @@ function Videos(){
         <div className="videos">
             <div className="videost">VIDEOS</div>
             <div className="videocontainer">
-                <div className="videospanel"><Hframe thumb={r1}/></div><hr/>
-                <div className="videospanel"><Hframe thumb={r2}/></div><hr/>
                 <div className="videospanel"><Hframe thumb={r3}/></div><hr/>
+                <div className="videospanel"><Hframe thumb={r2}/></div><hr/>
+                <div className="videospanel"><Hframe thumb={r1}/></div><hr/>
                 <div className="videospanel"><Hframe thumb={r4}/></div>
             </div>
         </div>

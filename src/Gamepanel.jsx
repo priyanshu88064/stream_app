@@ -1,11 +1,11 @@
 import gameimg from "./icons/thumbnail.jpeg";
 
-function Gamepanel(){
+function Gamepanel({isStat}){
     return (
         <div className="gamepanel">
-            <img src={gameimg} alt="Game" style={{width:"160px",height:"160px"}}/>
+            <img src={gameimg} alt="Game" style={{width:"150px",height:"150px"}}/>
             <div className="gpname">BGMI</div>
-            <div className="gpstat">129.4K 500M</div>
+            {isStat && <div className="gpstat">129.4K 500M</div>}
         </div>
     );
 }
