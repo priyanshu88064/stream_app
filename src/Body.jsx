@@ -4,6 +4,7 @@ import BodyPanel from "./BodyPanel";
 import Live from './Live';
 import Videos from './Videos';
 import Games from './Games';
+import Channel from "./Channel";
 
 function Body(){
     return (
@@ -15,6 +16,7 @@ function Body(){
                     <Route path="/live" element={<Live/>}/>
                     <Route path="/videos" element={<Videos/>}/>
                     <Route path="/games" element={<Games/>}/>
+                    <Route path="/channel" element={<Channel/>}/>
                 </Routes>
             </div>
         </BrowserRouter>

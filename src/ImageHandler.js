@@ -12,5 +12,7 @@ import thumb10 from "./icons/thumbnail10.jpeg"
 import thumb11 from "./icons/thumbnail11.jpeg"
 
 const thumbArray = [thumb0,thumb1,thumb2,thumb3,thumb4,thumb5,thumb6,thumb7,thumb8,thumb9,thumb10,thumb11];
+const profile = "https://images.rooter.gg/rooter-profile-images/prod-2015019433-1653488640028/xhdpi.webp";
+const tick = "https://www.rooter.gg/svg/common/profileVerifyFilled.svg";
 
-export {thumbArray};
+export {thumbArray,profile,tick};
