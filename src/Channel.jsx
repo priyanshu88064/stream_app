@@ -2,7 +2,7 @@ import {profile, tick} from "./ImageHandler";
 import Tags from "./Tags";
 import Videos from './Videos';
 
-function Channel(){
+function Channel({all}){
     return (
         <div className="channel">
             <div className="channelhead">
@@ -27,7 +27,7 @@ function Channel(){
                 </div>
                 <hr/>
                 <div className="channelbody">
-                    <Videos pad={true}/>
+                    <Videos pad={true} all={all}/>
                 </div>
             </div>
         </div>

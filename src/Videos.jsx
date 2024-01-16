@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import Hframe from './Hframe';
 import {thumbArray} from "./ImageHandler";
 
-function Videos({pad}){
+function Videos({pad,all}){
 
     const r1 = useRef([thumbArray[0],thumbArray[1],thumbArray[2],thumbArray[3]]);
     const r2 = useRef([thumbArray[4],thumbArray[7],thumbArray[10],thumbArray[1]]);
@@ -13,10 +13,10 @@ function Videos({pad}){
         <div className="videos" style={{padding:pad?"0px":""}}>
             <div className="videost">VIDEOS</div>
             <div className="videocontainer">
-                <div className="videospanel"><Hframe thumb={r3}/></div><hr/>
-                <div className="videospanel"><Hframe thumb={r2}/></div><hr/>
-                <div className="videospanel"><Hframe thumb={r1}/></div><hr/>
-                <div className="videospanel"><Hframe thumb={r4}/></div>
+                <div className="videospanel"><Hframe thumb={r3} all={all}/></div><hr/>
+                <div className="videospanel"><Hframe thumb={r2} all={all}/></div><hr/>
+                <div className="videospanel"><Hframe thumb={r1} all={all}/></div><hr/>
+                <div className="videospanel"><Hframe thumb={r4} all={all}/></div>
             </div>
         </div>
     );

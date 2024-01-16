@@ -5,16 +5,22 @@ import videoicon from "./icons/videos.svg"
 import gameicon from "./icons/game.svg"
 import jonnyicon from "./icons/jonathan.jpg"
 import recicon from "./icons/recommended.svg"
+import {streamer} from "./ImageHandler"
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 function BodyPanel(){
+
+    const [activeItem,setActiveItem] = useState("HOME");
+
     return (
         <div className="bpanel">
             <div className="bpanelup">
-                <Item Name={"HOME"} font={"13px"} icon={homeicon}/>
-                <Item Name={"LIVE NOW"} font={"13px"} icon={liveicon}/>
-                <Item Name={"VIDEOS"} font={"13px"} icon={videoicon}/>
-                <Item Name={"GAMES"} font={"13px"} icon={gameicon}/>
+                <Item Name={"HOME"} font={"13px"} icon={homeicon} activeItem={activeItem} setActiveItem={setActiveItem}/>
+                <Item Name={"LIVE NOW"} font={"13px"} icon={liveicon} activeItem={activeItem} setActiveItem={setActiveItem}/>
+                <Item Name={"VIDEOS"} font={"13px"} icon={videoicon} activeItem={activeItem} setActiveItem={setActiveItem}/>
+                <Item Name={"GAMES"} font={"13px"} icon={gameicon} activeItem={activeItem} setActiveItem={setActiveItem}/>
+                <Item Name={"STREAMERS"} font={"13px"} icon={streamer} activeItem={activeItem} setActiveItem={setActiveItem}/>
             </div>
             <div className="bpaneldown">
                 <div className="label">
