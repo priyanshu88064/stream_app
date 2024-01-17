@@ -11,6 +11,7 @@ import thumb9 from "./icons/thumbnail9.jpeg"
 import thumb10 from "./icons/thumbnail10.jpeg"
 import thumb11 from "./icons/thumbnail11.jpeg"
 import send from "./icons/send.svg"
+import collapse from "./icons/collapse.svg"
 
 const thumbArray = [thumb0,thumb1,thumb2,thumb3,thumb4,thumb5,thumb6,thumb7,thumb8,thumb9,thumb10,thumb11];
 const profile = "https://images.rooter.gg/rooter-profile-images/prod-2015019433-1653488640028/xhdpi.webp";
@@ -21,4 +22,4 @@ const followers = "https://loco.gg/topStreamers/followersIcon.svg";
 const eye = "https://loco.gg/topStreamers/viewsIcon.svg";
 const userplus = "https://loco.gg/topStreamers/userPlus.svg";
 
-export {thumbArray,profile,tick,send,streamer,profile2,followers,eye,userplus};
+export {thumbArray,profile,tick,send,streamer,profile2,followers,eye,userplus,collapse};

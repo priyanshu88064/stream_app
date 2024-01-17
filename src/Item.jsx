@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-function Item({Name,watching,font,icon,activeItem,setActiveItem}){
+function Item({Name,watching,font,icon,activeItem,setActiveItem,isCol}){
 
     const navigate = useNavigate();
 
@@ -31,10 +31,10 @@ function Item({Name,watching,font,icon,activeItem,setActiveItem}){
     }
 
     return (
-        <div className={`item ${Name===activeItem?"activeitem":""}`} style={{fontSize:font}} onClick={handleClick}>
-            <div className="icon"><img src={icon} alt="Home"/></div>
-            <div className="itemname" style={{fontSize:font}} >{Name}</div>
-            {watching >= 0 && <div className="itemlive">● <span>{watching}</span></div>}
+        <div className={`item ${Name===activeItem?"activeitem":""} ${isCol?"itemt":"itemf"}`} style={{fontSize:font}} onClick={handleClick}>
+            <div className={`icon ${isCol?"icont":"iconf"}`}><img className={`${isCol?"iconimgt":"iconimgf"}`} src={icon} alt="Home"/></div>
+            {!isCol && <div className="itemname" style={{fontSize:font}} >{Name}</div>}
+            {!isCol && watching >= 0 && <div className="itemlive">● <span>{watching}</span></div>}
         </div>
     );
 }

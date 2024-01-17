@@ -1,10 +1,15 @@
 import { useNavigate } from "react-router-dom";
 import Mtitle from "./Mtitle";
+import { useContext } from "react";
+import { ColContext } from "./Body";
 
 function Panel({zoom,bg,isLive}){
 
-    let width = zoom * 16;
-    let height = zoom * 9;
+    const isCol = useContext(ColContext);
+    const add = isCol?3:0;
+
+    let width = (zoom+add) * 16;
+    let height = (zoom+add) * 9;
 
     const navigate = useNavigate();
 
