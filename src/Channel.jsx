@@ -1,8 +1,16 @@
+import { useState } from "react";
 import {profile, tick} from "./ImageHandler";
 import Tags from "./Tags";
 import Videos from './Videos';
 
 function Channel({all}){
+
+    const [activeItem,setActiveItem] = useState("Live");
+
+    const handleItem = item=>{
+        setActiveItem(item);
+    }
+
     return (
         <div className="channel">
             <div className="channelhead">
@@ -21,9 +29,9 @@ function Channel({all}){
             </div>
             <div className="channelfoot">
                 <div className="channelnavbar">
-                    <div className="cnavitem">Live</div>
-                    <div className="cnavitem">Videos</div>
-                    <div className="cnavitem">Clips</div>
+                    <div className={`cnavitem ${activeItem==="Live"?"cniactive":""}`} onClick={()=>handleItem("Live")}>Live</div>
+                    <div className={`cnavitem ${activeItem==="Videos"?"cniactive":""}`} onClick={()=>handleItem("Videos")}>Videos</div>
+                    <div className={`cnavitem ${activeItem==="Clips"?"cniactive":""}`} onClick={()=>handleItem("Clips")}>Clips</div>
                 </div>
                 <hr/>
                 <div className="channelbody">

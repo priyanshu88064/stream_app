@@ -505,6 +505,11 @@ hr{
   padding: 15px 50px 15px 50px;
   font-size: 14px;
   color: rgb(193, 193, 193);
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+}
+.cniactive{
+  border-bottom: 3px solid blue;
 }
 .channelbody{
   overflow: scroll;
