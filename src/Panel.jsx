@@ -3,7 +3,7 @@ import Mtitle from "./Mtitle";
 import { useContext } from "react";
 import { ColContext } from "./Body";
 
-function Panel({zoom,bg,isLive}){
+function Panel({zoom,bg,isLive,title}){
 
     const isCol = useContext(ColContext);
     const add = isCol?3:0;
@@ -21,7 +21,7 @@ function Panel({zoom,bg,isLive}){
         <div className="panel" style={{width:width,height:height,backgroundImage:`url(${bg})`}} onClick={handlePanel}>
             <div className="opacity"></div>
             {isLive && <div className="as plive">● {Math.floor(Math.random()*10000)}</div>}
-            {isLive && <Mtitle zoom={zoom} />}
+            {isLive && <Mtitle zoom={zoom} titlex={title} />}
             {!isLive && <div className="duration">12:50</div>}
             {!isLive && <div className="gametag">BGMI</div>}
         </div>
