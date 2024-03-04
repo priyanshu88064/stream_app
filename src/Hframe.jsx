@@ -5,20 +5,20 @@ function Hframe({thumb,all}){
     return (
         <div className="hframe">
             <div className='hele'>
-                <Panel zoom={19} bg={thumb.current[0]} isLive={false}/>
-                <HeleStats/>
+                <Panel zoom={19} duration={thumb[0].duration} isLive={false}/>
+                <HeleStats thumb={thumb[0]}/>
             </div>
             <div className='hele'>
-                <Panel zoom={19} bg={thumb.current[1]} isLive={false}/>
-                <HeleStats/>
+                <Panel zoom={19} duration={thumb[1].duration} isLive={false}/>
+                <HeleStats thumb={thumb[1]}/>
             </div>
             <div className='hele'>
-                <Panel zoom={19} bg={thumb.current[2]} isLive={false}/>
-                <HeleStats/>
+                <Panel zoom={19} duration={thumb[2].duration} isLive={false}/>
+                <HeleStats thumb={thumb[2]}/>
             </div>
             {!all && <div className='hele'>
-                <Panel zoom={19} bg={thumb.current[3]} isLive={false}/>
-                <HeleStats/>
+                <Panel zoom={19} duration={thumb[3].duration} isLive={false}/>
+                <HeleStats thumb={thumb[3]}/>
             </div>}
         </div>
     );

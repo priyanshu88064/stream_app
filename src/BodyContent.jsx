@@ -4,9 +4,16 @@ import Recommended from "./Recommended";
 import Categories from "./Categories";
 import {thumbArray} from "./ImageHandler";
 
-function BodyContent(){
+function BodyContent({liveMerged,videoGallery}){
 
-    const [thumbCurrent,setThumbCurrent] = useState([thumbArray[0],thumbArray[1],thumbArray[2],thumbArray[3],thumbArray[4]]);
+    const [thumbCurrent,setThumbCurrent] = useState([
+        liveMerged[0],
+        liveMerged[1],
+        liveMerged[2],
+        liveMerged[3],
+        liveMerged[4]
+    ]);
+    console.log(thumbCurrent);
     const r1 = useRef([thumbArray[2],thumbArray[1],thumbArray[0],thumbArray[10]]);
     const r2 = useRef([thumbArray[0],thumbArray[3],thumbArray[5],thumbArray[7]]);
     const r3 = useRef([thumbArray[11],thumbArray[6],thumbArray[8],thumbArray[4]]);
@@ -17,7 +24,13 @@ function BodyContent(){
 
         const rightAnimInterval = setInterval(()=>{
 
-            setThumbCurrent([thumbArray[(currPos.current)%12],thumbArray[(currPos.current+1)%12],thumbArray[(currPos.current+2)%12],thumbArray[(currPos.current+3)%12],thumbArray[(currPos.current+4)%12]]);
+            setThumbCurrent([
+                liveMerged[(currPos.current)%liveMerged.length],
+                liveMerged[(currPos.current+1)%liveMerged.length],
+                liveMerged[(currPos.current+2)%liveMerged.length],
+                liveMerged[(currPos.current+3)%liveMerged.length],
+                liveMerged[(currPos.current+4)%liveMerged.length]
+            ]);
             currPos.current += 1;
             
             setFrameAnim('rightAnim');
@@ -29,10 +42,16 @@ function BodyContent(){
 
         return ()=>clearInterval(rightAnimInterval);
 
-    },[currPos]);
+    },[currPos,liveMerged]);
 
     const handleRight = ()=>{
-        setThumbCurrent([thumbArray[(currPos.current)%12],thumbArray[(currPos.current+1)%12],thumbArray[(currPos.current+2)%12],thumbArray[(currPos.current+3)%12],thumbArray[(currPos.current+4)%12]]);
+        setThumbCurrent([
+            liveMerged[(currPos.current)%liveMerged.length],
+            liveMerged[(currPos.current+1)%liveMerged.length],
+            liveMerged[(currPos.current+2)%liveMerged.length],
+            liveMerged[(currPos.current+3)%liveMerged.length],
+            liveMerged[(currPos.current+4)%liveMerged.length]
+        ]);
         currPos.current+=1;
         
         setFrameAnim('rightAnim');
@@ -41,7 +60,13 @@ function BodyContent(){
         }, 400);
     }
     const handleLeft = ()=>{
-        setThumbCurrent([thumbArray[(currPos.current)%12],thumbArray[(currPos.current+1)%12],thumbArray[(currPos.current+2)%12],thumbArray[(currPos.current+3)%12],thumbArray[(currPos.current+4)%12]]);
+        setThumbCurrent([
+            liveMerged[(currPos.current)%liveMerged.length],
+            liveMerged[(currPos.current+1)%liveMerged.length],
+            liveMerged[(currPos.current+2)%liveMerged.length],
+            liveMerged[(currPos.current+3)%liveMerged.length],
+            liveMerged[(currPos.current+4)%liveMerged.length]
+        ]);
         currPos.current+=1;
 
         setFrameAnim('leftAnim');
@@ -58,11 +83,19 @@ function BodyContent(){
                 <div className="frameright" onClick={handleRight}>&#x276F;</div>
             </div>
 
-            <Recommended title={"RECOMMENDED"} thumb={r1}/>
-            <Recommended title={"TRENDING"} thumb={r2}/>
-            <Recommended title={"MOST WATCHED"} thumb={r3} />
+            { videoGallery && videoGallery[0] && <Recommended title={"RECOMMENDED"} thumb={videoGallery[0]}/>}
+            { videoGallery && videoGallery[1] && <Recommended title={"TRENDING"} thumb={videoGallery[1]}/>}
+            { videoGallery && videoGallery[2] && <Recommended title={"MOST WATCHED"} thumb={videoGallery[2]} />}
             <Categories/>
         </div>
     );
 }
 export default BodyContent;
+
+// Shuffle Array
+// function shuffleArray(array) {
+//     for (let i = array.length - 1; i > 0; i--) {
+//         const j = Math.floor(Math.random() * (i + 1));
+//         [array[i], array[j]] = [array[j], array[i]];
+//     }
+// }

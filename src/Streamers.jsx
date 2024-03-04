@@ -1,45 +1,17 @@
+import { useEffect, useState } from "react";
 import Card from "./Card";
+import { getStreamers } from "./api/getStreamers";
 
-function Streamers(){
+function Streamers({streamers}){
     return (
         <div className="streamers">
             <div className="stitle">TOP STREAMERS</div>
             <div className="scont">
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/><hr/>
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/><hr/>
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/><hr/>
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/><hr/>
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
+                {
+                    streamers.map(streamer=>(
+                        <Card key={streamer.id} Name={streamer.name} profileImg={streamer.profileImg}/>
+                    ))
+                }
             </div>
         </div>
     );

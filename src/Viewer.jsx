@@ -1,7 +1,6 @@
 import Channel from './Channel';
 import { send } from './ImageHandler';
 import Chats from './Chats';
-import Tags from './Tags';
 
 function Viewer(){
     return (

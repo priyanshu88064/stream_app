@@ -8,7 +8,7 @@ import recicon from "./icons/recommended.svg"
 import {collapse, streamer} from "./ImageHandler"
 import { useState } from "react";
 
-function BodyPanel({isCol,setIsCol}){
+function BodyPanel({isCol,setIsCol,liveMerged}){
 
     const [activeItem,setActiveItem] = useState("HOME");
    
@@ -31,14 +31,18 @@ function BodyPanel({isCol,setIsCol}){
                     <div className="li"><img src={recicon} alt="Icon"/></div>
                     <div className="mi">RECOMMENDED</div>
                 </div>}
-                <Item Name={"Jonathan Gaming"} watching={1123}  font={"12px"} icon={jonnyicon} isCol={isCol}/>
-                <Item Name={"DynamoIsLive"} watching={12000} font={"12px"} icon={jonnyicon} isCol={isCol}/>
-                <Item Name={"Mortal"} watching={230} font={"12px"} icon={jonnyicon} isCol={isCol}/>
-                <Item Name={"BlindxSpower"} watching={4500} font={"12px"} icon={jonnyicon} isCol={isCol}/>
-                <Item Name={"CarryIsLive"} watching={901} font={"12px"} icon={jonnyicon} isCol={isCol}/>
-                <Item Name={"PewDiePie"} watching={1290} font={"12px"} icon={jonnyicon} isCol={isCol}/>
-                <Item Name={"Levinho"} watching={43000} font={"12px"} icon={jonnyicon} isCol={isCol}/>
-                <Item Name={"Scout"} watching={120} font={"12px"} icon={jonnyicon} isCol={isCol}/>
+                {
+                    liveMerged.map(live=>(
+                        <Item 
+                            key={live.id}
+                            Name={live.publisher.name}
+                            watching={live.viewers}
+                            font={"12px"}
+                            icon={jonnyicon}
+                            isCol={isCol}
+                        />
+                    ))
+                }
             </div>
         </div>
     );
