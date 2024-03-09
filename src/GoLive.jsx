@@ -9,6 +9,7 @@ import {authToken,createMeeting} from "./api/API";
 import ReactPlayer from "react-player"; 
 import { useEffect, useRef, useState,useMemo } from "react";
 import {golive} from "./ImageHandler";
+import { startLive, stopLive } from "./api/streamerAccount";
   
 function ParticipantView(props) {
     const micRef = useRef(null);
@@ -53,8 +54,8 @@ function ParticipantView(props) {
             //
             url={videoStream}
             //
-            width={"800px"}
-            height={"450px"}
+            width={"448px"}
+            height={"252px"}
             onError={(err) => {
               console.log(err, "participant video error");
             }}
@@ -63,7 +64,7 @@ function ParticipantView(props) {
     );
 }
   
-function SpeakerView({joined}) {
+function SpeakerView({joined,meetingId}) {
       const { participants,enableScreenShare,disableScreenShare,startHls,leave } = useMeeting();
   
       const speakers = useMemo(() => {
@@ -75,33 +76,23 @@ function SpeakerView({joined}) {
         return speakerParticipants;
       }, [participants]);
 
+      // console.log("lele",speakers[0]);
+
       useEffect(()=>{
         enableScreenShare();
-
-        startHls({
-            layout: {
-              type: "SPOTLIGHT",
-              priority: "PIN",
-              gridSize: "20",
-            },
-            theme: "LIGHT",
-            mode: "video-and-audio",
-            quality: "high",
-            orientation: "landscape",
-        });
-
       },[]);
 
       return (
         <div className="sview">
-          {speakers.map((participant) => (
+          {/* {speakers.map((participant) => (
             <ParticipantView participantId={participant.id} key={participant.id} />
-          ))}
+          ))} */}
+          <ParticipantView participantId={speakers[0].id} key={speakers[0].id}/>
         </div>
       );
 }
   
-function Container({joined,setJoined}) {
+function Container({joined,setJoined,meetingId}) {
     
     const { join } = useMeeting();
     const mMeeting = useMeeting({
@@ -122,35 +113,59 @@ function Container({joined,setJoined}) {
         {joined && joined == "JOINED" ? <SpeakerView joined={joined}/> : joined && joined == "JOINING" ? (
           <p>Joining the meeting...</p>
         ) : (
-          <div className="givep" onClick={joinMeeting}>Click to give Screen Permissions</div>
+          <button onClick={joinMeeting}>Click to give Screen Permissions</button>
         )}
       </div>
     );
 }
   
-function GoLive(){
+function GoLive({msg,setMsg,userObject,title}){
     const [meetingId, setMeetingId] = useState(null);
-    const [msg,setMsg] = useState("Start Live");
     const [joined, setJoined] = useState(null);
 
     const getMeetingAndToken = async () => {
-        if(meetingId==null){
-            setMeetingId(await createMeeting({ token: authToken }));
-        }
+      if(meetingId==null){
+        setMeetingId(await createMeeting({ token: authToken }));
+      }
     };
-
-    useEffect(()=>{
-        if(joined === "JOINED"){
-            setMsg("Stop");
-        }else if(joined == null){
-            setMsg("Start Live");
-        }
-    },[joined]);
-
+    
     const leaveMeeting = ()=>{
         setJoined(null);
         setMeetingId(null);
+        handleLive(false);
+        window.location.reload();
     }
+
+    const handleLive = async (x)=>{
+      if(x){
+        const response = await startLive({
+          publisher:userObject.id,
+          title:title,
+          image:userObject.profileImg,
+          meetingid:meetingId
+        });
+        setMsg("STOP STREAMING");
+      }else{
+        const response = await stopLive(userObject.id);
+      }
+    }
+
+    useEffect(()=>{
+        if(joined === "JOINED"){
+          handleLive(true);
+        }else if(joined == null){
+          setMsg("START STREAMING");
+        }
+    },[joined]);
+
+    useEffect(()=>{
+      if(msg==="WAITING FOR PERMISSION"){
+        getMeetingAndToken();
+      }else if(msg==="TERMINATING"){
+        leaveMeeting();
+      }
+    },[msg]);
+
 
     return (
         <div className="golive">
@@ -163,14 +178,14 @@ function GoLive(){
                               meetingId,
                               micEnabled: false,
                               webcamEnabled: false,
-                              name: "Priyanshu Tiwari",
+                              name: meetingId,
                               mode: "CONFERENCE",
                             }}
                             token={authToken}
                           >
                             <MeetingConsumer>
                               {() => (
-                                <Container joined={joined} setJoined={setJoined}/>
+                                <Container joined={joined} setJoined={setJoined} meetingId={meetingId}/>
                               )}
                             </MeetingConsumer>
                           </MeetingProvider>
@@ -179,7 +194,7 @@ function GoLive(){
                     )
                 }
             </div>
-            <div className={`goliveenable ${joined==="JOINED"?"golivenablejoined":""}`} onClick={joined==="JOINED"?leaveMeeting:getMeetingAndToken}>{joined!=="JOINED" && <img src={golive}/>}{msg}</div>
+            {/* <div className={`goliveenable ${joined==="JOINED"?"golivenablejoined":""}`} onClick={joined==="JOINED"?leaveMeeting:getMeetingAndToken}>{joined!=="JOINED" && <img src={golive}/>}{msg}</div> */}
         </div>
     );
   

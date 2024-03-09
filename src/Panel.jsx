@@ -3,7 +3,7 @@ import Mtitle from "./Mtitle";
 import { useContext } from "react";
 import { ColContext } from "./Body";
 
-function Panel({zoom,bg,isLive,title,viewers,publisher,duration}){
+function Panel({isFrame,zoom,bg,isLive,title,viewers,publisher,liveId,duration}){
 
     const isCol = useContext(ColContext);
     const add = isCol?3:0;
@@ -14,16 +14,15 @@ function Panel({zoom,bg,isLive,title,viewers,publisher,duration}){
     const navigate = useNavigate();
 
     const handlePanel = ()=>{
-        navigate("/vi");
+        if(isLive && liveId) navigate("/vi/"+liveId);
     }
 
     return (
         <div className="panel" style={{width:width,height:height,backgroundImage:`url(${bg})`}} onClick={handlePanel}>
-            <div className="opacity"></div>
+            <div className={`opacity ${isLive || duration ?"":"loadingskeleton psk"}`}></div>
             {isLive && viewers!==undefined && <div className="as plive">● {viewers}</div>}
             {isLive && <Mtitle zoom={zoom} titlex={title} publisher={publisher} />}
             {!isLive && duration && <div className="duration">{duration}</div>}
-            {!isLive && duration && <div className="gametag">BGMI</div>}
         </div>
     );
 }

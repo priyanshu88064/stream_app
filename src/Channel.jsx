@@ -3,7 +3,7 @@ import {profile, tick} from "./ImageHandler";
 import Tags from "./Tags";
 import Videos from './Videos';
 
-function Channel({all}){
+function Channel({all,currLive}){
 
     const [activeItem,setActiveItem] = useState("Live");
 
@@ -15,9 +15,9 @@ function Channel({all}){
         <div className="channel">
             <div className="channelhead">
                <div className="cchead">
-                    <div className="cpfpimg"><img src={profile} alt="Profile"/></div>
+                    <div className="cpfpimg"><img src={ currLive?.publisher?.profileImg || profile} alt="Profile"/></div>
                     <div className="cinfo">
-                        <div className="ctitle"><div>JONATHAN GAMING</div> <img src={tick} alt="tick"/></div>
+                        <div className="ctitle"><div>{currLive?.publisher?.name}</div> <img src={tick} alt="tick"/></div>
                         <div className="cmeta"><span>1.8M</span> Followers <span>3</span> Following</div>
                     </div>
                </div>

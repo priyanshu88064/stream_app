@@ -23,6 +23,7 @@ function Live({liveStreams}){
                                     title={live.title}
                                     publisher={live.publisher}
                                     viewers={live.viewers}
+                                    liveId={live.id}
                                 />
                             </div>
                         )):

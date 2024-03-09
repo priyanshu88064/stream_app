@@ -20,11 +20,25 @@ function BodyPanel({isCol,setIsCol,liveMerged}){
         <div className="bpanel">
             <div className="bpanelup">
                 <div className={`collapse ${isCol?"colt":"colf"}`} onClick={handleCollapse}><img src={collapse} alt="collapse"/></div>
-                <Item Name={"HOME"} font={"13px"} icon={homeicon} activeItem={activeItem} setActiveItem={setActiveItem} isCol={isCol}/>
-                <Item Name={"LIVE NOW"} font={"13px"} icon={liveicon} activeItem={activeItem} setActiveItem={setActiveItem} isCol={isCol}/>
-                <Item Name={"VIDEOS"} font={"13px"} icon={videoicon} activeItem={activeItem} setActiveItem={setActiveItem} isCol={isCol}/>
-                <Item Name={"GAMES"} font={"13px"} icon={gameicon} activeItem={activeItem} setActiveItem={setActiveItem} isCol={isCol}/>
-                <Item Name={"STREAMERS"} font={"13px"} icon={streamer} activeItem={activeItem} setActiveItem={setActiveItem} isCol={isCol}/>
+                {
+                    [...Array(
+                        {title:"HOME",icon:homeicon},
+                        {title:"LIVE NOW",icon:liveicon},
+                        {title:"VIDEOS",icon:videoicon},
+                        {title:"GAMES",icon:gameicon},
+                        {title:"STREAMERS",icon:streamer}
+                    )].map((item,index)=>(
+                        <Item
+                            key={index}
+                            Name={item.title} 
+                            font={"13px"} 
+                            icon={item.icon} 
+                            activeItem={activeItem} 
+                            setActiveItem={setActiveItem} 
+                            isCol={isCol}
+                        />
+                    ))
+                }
             </div>
             <div className="bpaneldown">
                 {!isCol && <div className="label">
@@ -32,6 +46,8 @@ function BodyPanel({isCol,setIsCol,liveMerged}){
                     <div className="mi">RECOMMENDED</div>
                 </div>}
                 {
+                    liveMerged && liveMerged.length ?
+                    
                     liveMerged.map(live=>(
                         <Item 
                             key={live.id}
@@ -39,6 +55,16 @@ function BodyPanel({isCol,setIsCol,liveMerged}){
                             watching={live.viewers}
                             font={"12px"}
                             icon={jonnyicon}
+                            isCol={isCol}
+                            liveId={live.id}
+                        />
+                    ))
+                    :
+                    [...Array(5)].map((_,index)=>(
+                        <Item
+                            Name={""}
+                            key={index}
+                            font={"12px"}
                             isCol={isCol}
                         />
                     ))

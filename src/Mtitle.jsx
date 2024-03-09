@@ -16,10 +16,10 @@ function Mtitle({zoom,titlex,publisher}){
             </div>
             <div className="mpart">
                 <div className="mvideotitle" style={{fontSize:fontS}}>
-                    {title ? title : <div className="mvideotitleskeleton"></div>}
+                    {title ? title : <div className="loadingskeleton"></div>}
                 </div>
                 <div className="mmeta" style={{fontSize:fontMeta}}>
-                    {publisher ? publisher.name : <div className="mvideotitleskeleton"></div>}
+                    {publisher ? publisher.name : <div className="loadingskeleton"></div>}
                 </div>
             </div>
         </div>

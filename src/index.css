@@ -86,6 +86,23 @@ html,body{
   font-weight: 900;
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   margin-left: 20px;
+  color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+
+  background-color: #FF3CAC;
+  background-image: linear-gradient(225deg, #ff96d2 0%, #784BA0 50%, #4fb4fc 100%);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img{
+    width: 30px;
+    margin-right: 5px;
+    margin-bottom: 1px;
+  }
 }
 .searchbar > input{
   all:unset;
@@ -142,6 +159,13 @@ html,body{
 }
 .icon{
   text-align: center;
+}
+.tmm{
+  background:rgb(35,35,35);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin: auto;
 }
 .icont{
   width: 100%;
@@ -232,8 +256,8 @@ html,body{
   min-height: 15px;
   border-radius: 5px;
   margin-right: 10px;
-  background: linear-gradient(87deg, rgba(35,35,35,1) 10%, rgb(45, 45, 45) 54%, rgba(35, 35, 35,100) 100%);
-  animation: 3s myskeleton reverse infinite;
+  background: linear-gradient(87deg, rgb(35,35,35) 10%, rgb(72, 72, 72) 50%, rgb(35,35,35) 100%);
+  animation: 10s myskeleton linear;
 }
 .miconskeleton{
   min-width: 35px;
@@ -320,6 +344,7 @@ hr{
   font-size: 12px;
   margin-top: 5px;
   color: gray;
+  width: 70%;
 }
 .c2{
   width: 85%;
@@ -339,12 +364,7 @@ hr{
   height: 30px;
   border-radius: 50%;
 }
-.categories{
-  background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(34,22,79,1) 77%);
-  margin: 40px 25px 0 25px;
-  padding: 20px 20px 0 20px;
-}
-.chead{
+/* .chead{
   display: flex;
   align-items: center;
   margin-bottom: 20px;
@@ -362,7 +382,7 @@ hr{
   display: flex;
   justify-content: space-evenly;
   background-color: rgb(37, 37, 37);
-}
+} */
 .gamepanel{
   padding-top: 13px;
 }
@@ -555,9 +575,15 @@ hr{
   overflow: scroll;
 }
 .videoholder{
-  border: 1px solid rgb(52, 52, 52);
-  height: 500px;
+  height: 495px;
   margin: 20px;
+  border: 2px solid gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  /* background-color: rgb(35, 35, 35); */
+  background-color: rgb(148, 148, 148);
 }
 .videotitle{
   font-size: 18px;
@@ -591,6 +617,12 @@ hr{
 .chatbody{
   height: 90%;
   overflow: scroll;
+  display: flex;
+  justify-content: center;
+
+  img{
+    width: 200px;
+  }
 }
 .chatinput{
   height: 10%;
@@ -648,7 +680,7 @@ hr{
   flex-wrap: wrap;
 }
 .card{
-  background-color: rgb(35, 35, 35);
+  background-color: rgb(25, 25, 25);
   padding: 15px;
   border-radius: 10px;
   margin-top: 30px;
@@ -659,9 +691,11 @@ hr{
 .card:hover{
   background-color: rgb(57, 57, 57);
 }
+
 .cardimg > img{
   border-radius: 50%;
   width: 130px;
+  height: 130px;
 }
 .cardname{
   font-size: 13px;
@@ -757,13 +791,11 @@ hr{
   }
 }
 .golivebox{
-  border: 3px solid;
+  border: 2px solid;
   border-image-slice: 1;
   border-image-source: linear-gradient(87deg, rgba(240,0,0,1) 24%, rgba(22,4,232,1) 47%, rgba(184,13,193,0.987079866126138) 75%);
-  width: 800px;
-  height: 450px;
-  margin: auto;
-  margin-top: 40px;
+  width: 448px;
+  height: 252px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -789,21 +821,20 @@ hr{
   }
 }
 .goliveenable{
-  font-size: 25px;
-  margin: auto;
-  margin-top: 40px;
-  max-width: 170px;
+  font-size: 18px;
   background-color: rgb(0, 150, 17);
   border-radius: 5px;
-  padding: 10px;
+  /* padding: 10px; */
   color: rgb(207, 207, 207);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 30px;
+  transition: all 250ms;
 
   img{
-    width: 50px;
+    width: 40px;
   }
 }
 .goliveenable:active{
@@ -812,8 +843,132 @@ hr{
 .golivenablejoined{
   background-color: rgb(178, 7, 7);
 }
-.givep{
-  background-color: rgb(126, 3, 3);
-  padding: 10px;
+.golivecontainer{
+  background-color: rgb(25, 25, 36);
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.glleft{
+  border-right: 1px solid rgb(45, 45, 45);
+  padding: 30px;
+}
+.gllup,.glldown{
+  background-color: rgb(39, 39, 54);
+  display: flex;
+  padding: 20px;
+  border-radius: 15px;
+}
+.txx,.tx{
+  width:450px;
+  height: 254px;
+  border-radius: 5px;
+  border: 1px solid rgb(82, 82, 82);
+}
+.txx{
+  border: none;
+  background-color: black;
+  margin-right: 20px;
+}
+.glldown{
+  flex-direction: column;
+  margin-top: 30px;
+  background-color: rgb(29, 29, 41);
+
+  input{
+    all: unset;
+    margin-top: 30px;
+    border-bottom: 1px solid rgb(63, 63, 63);
+    font-size: 17px;
+    transition: all 250ms;
+    color: rgb(201, 201, 201);
+  }
+  input:focus{
+    border-bottom: 1px solid rgb(255, 255, 255);
+  }
+}
+.joinlivebox{
+  width: 880px;
+  height: 495px;
+  border: none;
+  background-color: rgb(36, 36, 36);
+}
+.hiconskeleton{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background:rgb(35,35,35);
+}
+.loadingskeleton{
+  position: relative;
+  background:rgb(35,35,35);
+  min-height: 15px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.loadingskeleton:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgb(35,35,35) 10%, rgb(48, 48, 48), rgb(35,35,35) 100%);
+  animation: waveAnimation 1s linear infinite;
+}
+
+.psk:before{
+  background: linear-gradient(90deg, rgb(35,35,35) 10%, rgb(39, 39, 39) 50%, rgb(35,35,35) 100%);
+}
+
+@keyframes waveAnimation {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+.playlive{
   cursor: pointer;
+  img{
+    width: 150px;
+  }
+}
+.btngolive{
+  cursor: pointer;
+  padding: 3px 15px 3px 15px;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  font-size: 13px;
+  margin-right: 80px;
+  margin-top: 3px;
+  width: 60px;
+  justify-content: center;
+
+  img{
+    width: 23px;
+    margin-right: 5px;
+  }
+}
+.setanim{
+  animation: 5s btnanim infinite;
+}
+
+@keyframes btnanim {
+  0%{
+    background-position-x: 0px;
+  }
+  50%{
+    background-position-x: 200px;
+  }
+  100%{
+    background-position-x: 0px;
+  }
+}
+.cardimg{
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
 }

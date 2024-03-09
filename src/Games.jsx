@@ -20,9 +20,15 @@ function Games(){
             <div className="gamest">GAMES</div>
             <div className="gamescontainer">
                 {
+                    games.length ?
                     games.map(game=>(
                         <div key={game.id} className="gamespanel">
                             <Gamepanel name={game.name}/>
+                        </div>
+                    )) :
+                    [...Array(14)].map((_,index)=>(
+                        <div key={index} className="gamespanel">
+                            <Gamepanel/>
                         </div>
                     ))
                 }

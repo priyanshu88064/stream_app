@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import {logout} from "./ImageHandler";
 import { createStreamer } from "./api/streamerAccount";
 
-function HeaderUser({user,logoutAction}){
+function HeaderUser({user,logoutAction,setUserObject}){
 
     const [headUserPopup,setHeadUserPopup] = useState(false);
 
@@ -16,7 +16,7 @@ function HeaderUser({user,logoutAction}){
             email:user.email,
             profileImg:user.picture
         });
-        console.log(response);
+        setUserObject(response);
     }
 
     useEffect(()=>{

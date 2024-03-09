@@ -15,13 +15,13 @@ import { Merge } from "./service/MergeStreamer";
 import Login from "./Login";
 
 export const ColContext = createContext();
+export const DataContext = createContext();
 
 function Body(){
 
     const [isCol,setIsCol] = useState(false);
     const [streamers,setStreamers] = useState([]);
     const [videoGallery,setVideoGallery] = useState([]);
-    const [liveStreams,setLiveStreams] = useState([]);
     const [liveMerged,setLiveMerged] = useState([]);
 
     const fetchData = async () => {
@@ -44,12 +44,13 @@ function Body(){
         setVideoGallery(newVData);
 
         const lData = await getLive();
-        setLiveStreams(lData);
         setLiveMerged(Merge(sData,lData));
     }
 
     useEffect(()=>{
-        fetchData();
+        setTimeout(() => {
+            fetchData();
+        }, 5000);
     },[]);
 
     return (
@@ -57,16 +58,18 @@ function Body(){
             <div className="body">
                 <BodyPanel isCol={isCol} setIsCol={setIsCol} liveMerged={liveMerged}/>
                 <ColContext.Provider value={isCol}>
-                    <Routes>
-                        <Route path="/" element={<BodyContent liveMerged={liveMerged} videoGallery={videoGallery}/>}/>
-                        <Route path="/live" element={<Live liveStreams={liveMerged}/>}/>
-                        <Route path="/videos" element={<Videos videoGallery={videoGallery}/>}/>
-                        <Route path="/games" element={<Games/>}/>
-                        <Route path="/channel" element={<Channel/>}/>
-                        <Route path="/vi" element={<Viewer/>}/>
-                        <Route path="/streamers" element={<Streamers streamers={streamers}/>}/>
-                        <Route path="/login" element={<Login/>}/>
-                    </Routes>
+                    <DataContext.Provider value={{videoGallery,liveMerged}}>
+                        <Routes>
+                            <Route path="/" element={<BodyContent liveMerged={liveMerged} videoGallery={videoGallery}/>}/>
+                            <Route path="/live" element={<Live liveStreams={liveMerged}/>}/>
+                            <Route path="/videos" element={<Videos videoGallery={videoGallery}/>}/>
+                            <Route path="/games" element={<Games/>}/>
+                            <Route path="/channel" element={<Channel/>}/>
+                            <Route path="/vi/:liveId" element={<Viewer/>}/>
+                            <Route path="/streamers" element={<Streamers streamers={streamers}/>}/>
+                            <Route path="/login" element={<Login/>}/>
+                        </Routes>
+                    </DataContext.Provider>
                 </ColContext.Provider>
             </div>
         </BrowserRouter>

@@ -11,11 +11,22 @@ function Card({Name,profileImg}){
 
     return (
         <div className="card" onClick={handleChannel}>
-            <div className="cardimg"><img src={profileImg || profile2} alt="profile"/></div>
-            <div className="cardname">{Name}</div>
-            <div className="cardmeta"><img src={followers} alt="followers"/>500k <img src={eye} alt="eye"/>2.3M</div>
-            <hr/>
-            <div className="cardfollow"><img src={userplus} alt="userplus"/>FOLLOW</div>
+            {
+                Name && profileImg ?
+                <>
+                    <div className="cardimg"><img src={profileImg}/></div>
+                    <div className="cardname">{Name}</div>
+                    <div className="cardmeta"><img src={followers} alt="followers"/>500k <img src={eye} alt="eye"/>2.3M</div>
+                    <hr/>
+                    <div className="cardfollow"><img src={userplus} alt="userplus"/>FOLLOW</div>
+                </>
+                :
+                <>
+                    <div className="loadingskeleton cardimg"></div>
+                    <div className="cardname loadingskeleton"></div>
+                    <div className="cardmeta loadingskeleton"></div>
+                </>
+            }
         </div>
     );
 }

@@ -14,6 +14,10 @@ import send from "./icons/send.svg"
 import collapse from "./icons/collapse.svg"
 import logout from "./icons/logout.svg"
 import golive from "./icons/golive.svg"
+import bubble from "./icons/bubble.svg"
+import play from "./icons/play.svg"
+import createvideo from "./icons/createvideo.svg"
+import logo from "./icons/logo.svg"
 
 const thumbArray = [thumb0,thumb1,thumb2,thumb3,thumb4,thumb5,thumb6,thumb7,thumb8,thumb9,thumb10,thumb11];
 const profile = "https://images.rooter.gg/rooter-profile-images/prod-2015019433-1653488640028/xhdpi.webp";
@@ -24,4 +28,4 @@ const followers = "https://loco.gg/topStreamers/followersIcon.svg";
 const eye = "https://loco.gg/topStreamers/viewsIcon.svg";
 const userplus = "https://loco.gg/topStreamers/userPlus.svg";
 
-export {thumbArray,profile,tick,send,streamer,profile2,followers,eye,userplus,collapse,logout,golive};
+export {thumbArray,profile,tick,send,streamer,profile2,followers,eye,userplus,collapse,logout,golive,bubble,logo,play,createvideo};

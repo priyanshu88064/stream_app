@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import Frame from './Frame';
 import Recommended from "./Recommended";
-import Categories from "./Categories";
 import {thumbArray} from "./ImageHandler";
 
 function BodyContent({liveMerged,videoGallery}){
@@ -13,7 +12,6 @@ function BodyContent({liveMerged,videoGallery}){
         liveMerged[3],
         liveMerged[4]
     ]);
-    console.log(thumbCurrent);
     const r1 = useRef([thumbArray[2],thumbArray[1],thumbArray[0],thumbArray[10]]);
     const r2 = useRef([thumbArray[0],thumbArray[3],thumbArray[5],thumbArray[7]]);
     const r3 = useRef([thumbArray[11],thumbArray[6],thumbArray[8],thumbArray[4]]);
@@ -82,11 +80,11 @@ function BodyContent({liveMerged,videoGallery}){
                 <Frame thumbCurrent={thumbCurrent} animClass={isFramAnim}/>
                 <div className="frameright" onClick={handleRight}>&#x276F;</div>
             </div>
-
-            { videoGallery && videoGallery[0] && <Recommended title={"RECOMMENDED"} thumb={videoGallery[0]}/>}
-            { videoGallery && videoGallery[1] && <Recommended title={"TRENDING"} thumb={videoGallery[1]}/>}
-            { videoGallery && videoGallery[2] && <Recommended title={"MOST WATCHED"} thumb={videoGallery[2]} />}
-            <Categories/>
+            {
+                [...Array("RECOMMENDED","TRENDING","MOST WATCHED")].map((heading,index)=>(
+                    <Recommended key={index} title={heading} thumb={videoGallery[index]}/>
+                ))
+            }
         </div>
     );
 }
