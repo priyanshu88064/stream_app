@@ -2,7 +2,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import HeaderUser from "./HeaderUser";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { createvideo, logo } from "./ImageHandler";
+import { createvideo, home, logo } from "./ImageHandler";
 
 function Header({setIsCreateNewLive,setUserObject}){
     
@@ -19,6 +19,10 @@ function Header({setIsCreateNewLive,setUserObject}){
         });
     }
 
+    const handleHome = ()=>{
+        window.location.reload("/");
+    }
+
     useEffect(()=>{
         setInterval(() => {
            
@@ -33,7 +37,7 @@ function Header({setIsCreateNewLive,setUserObject}){
 
     return (
         <div className="header">
-            <div className="streamnet"><img src={logo}/>Stream4U</div>
+            <div className="streamnet" onClick={handleHome}><img src={logo}/>Stream4U</div>
             <div className="searchbar">
                 <input type="text" id="search" placeholder="Search for streamers,games,videos" autoComplete="off"/>
             </div>
@@ -41,10 +45,10 @@ function Header({setIsCreateNewLive,setUserObject}){
                 {
                     isAuthenticated ?
                     <>
-                        <div className={`btngolive ${btnBack.length>15?"setanim":""}`} style={{background:btnBack}} onClick={handleGoLive}><img src={createvideo}/>{btnText}</div>
+                        <div className={`btngolive ${btnBack.length>15?"setanim":""}`} style={{background:btnBack}} onClick={handleGoLive}><img src={btnText==="LIVE"?createvideo:home}/>{btnText}</div>
                         <HeaderUser user={user} logoutAction={logout} setUserObject={setUserObject}/>
                     </> :
-                    <div className="login" onClick={loginWithRedirect}>LOGIN</div>
+                    <div className={`login ${btnBack.length>15?"setanim":""}`} style={{background:btnBack}} onClick={loginWithRedirect}>LOGIN</div>
                 }
             </div>
         </div>

@@ -7,11 +7,20 @@ import jonnyicon from "./icons/jonathan.jpg"
 import recicon from "./icons/recommended.svg"
 import {collapse, streamer} from "./ImageHandler"
 import { useState } from "react";
+import { useParams } from "react-router-dom";
 
 function BodyPanel({isCol,setIsCol,liveMerged}){
 
-    const [activeItem,setActiveItem] = useState("HOME");
-   
+    const handlePath = path=>{
+        if(path === "/")return "HOME";
+        else if(path === "/live")return "LIVE NOW";
+        else if(path === "/videos")return "VIDEOS";
+        else if(path === "/games")return "GAMES";
+        else if(path === "/streamers")return "STREAMERS";
+    }
+    
+    const [activeItem,setActiveItem] = useState(handlePath(window.location.pathname));
+
     const handleCollapse = ()=>{
         setIsCol(val=>!val);
     }

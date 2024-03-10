@@ -90,6 +90,8 @@ html,body{
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  cursor: pointer;
+
 
   background-color: #FF3CAC;
   background-image: linear-gradient(225deg, #ff96d2 0%, #784BA0 50%, #4fb4fc 100%);
@@ -102,6 +104,18 @@ html,body{
     width: 30px;
     margin-right: 5px;
     margin-bottom: 1px;
+  }
+
+  @media screen and (max-width:500px) {
+    font-size: 18px;
+    img{
+      width: 22px;
+    }
+  }
+}
+.searchbar{
+  @media screen and (max-width:850px) {
+    display: none;
   }
 }
 .searchbar > input{
@@ -728,13 +742,21 @@ hr{
 }
 .headeruser{
   margin-right: 20px;
-}
-.huserimg > img{
-  width: 35px;
-  border-radius: 50%;
-  border: 1px solid gray;
-  cursor: pointer;
-  margin-top: 5px;
+  
+  img{
+    width: 35px;
+    border-radius: 50%;
+    border: 1px solid gray;
+    cursor: pointer;
+    margin-top: 5px;
+  }
+
+  @media screen and (max-width:500px) {
+    margin-right: 10px;
+    img{
+      width: 30px;
+    }
+  }
 }
 .huserpopup{
   position:fixed;
@@ -754,6 +776,12 @@ hr{
   div{
     text-align: center;
   }
+
+  @media screen and (max-width:500px) {
+    img{
+      width: 50px;
+    }
+  }
 }
 @keyframes popup {
   from{
@@ -766,6 +794,9 @@ hr{
 .huseremail{
   color: rgb(191, 191, 191);
   font-size: 12px;
+  @media screen and (max-width:500px) {
+    font-size: 10px;
+  }
 }
 .huserlogout{
   display: flex;
@@ -776,6 +807,10 @@ hr{
   img{
     width: 24px;
     margin-right: 10px;
+  }
+  @media screen and (max-width:500px) {
+    font-size: 12px;
+    padding: 5px;
   }
 }
 .huserpopuphead{
@@ -849,6 +884,25 @@ hr{
   height: 100%;
   display: flex;
 }
+.glright{
+  flex-grow: 1;
+  img{
+    width: 200px;
+  }
+}
+.glrhead{
+  text-align: center;
+  padding: 10px;
+  background-color: rgb(50, 50, 50);
+  color: rgb(176, 176, 176);
+}
+.glrbubble{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+  flex-direction: column;
+}
 .glleft{
   border-right: 1px solid rgb(45, 45, 45);
   padding: 30px;
@@ -869,6 +923,17 @@ hr{
   border: none;
   background-color: black;
   margin-right: 20px;
+}
+.tx{
+  display: flex;
+  color: rgb(87, 87, 87);
+  align-items: center;
+  div{
+    margin-left: 10px;
+    div{
+      padding: 2px;
+    }
+  }
 }
 .glldown{
   flex-direction: column;
@@ -936,6 +1001,7 @@ hr{
   }
 }
 .btngolive{
+  color-scheme: light only;
   cursor: pointer;
   padding: 3px 15px 3px 15px;
   display: flex;
@@ -950,6 +1016,13 @@ hr{
   img{
     width: 23px;
     margin-right: 5px;
+  }
+
+  @media screen and (max-width:500px) {
+    margin-right: 30px;
+    width: 40px;
+    font-size: 10px;
+    padding: 1px 15px 1px 15px;
   }
 }
 .setanim{
