@@ -39,7 +39,7 @@ function Item({liveId,Name,watching,font,icon,activeItem,setActiveItem,isCol}){
             }
             {
                 !isCol && Name ?
-                <div className="itemname" style={{fontSize:font}} >{Name}</div> :
+                <div className="itemname" >{Name}</div> :
                 !isCol ?
                 <div className="itemname loadingskeleton" style={{fontSize:font}} ></div> : <></>
             }
