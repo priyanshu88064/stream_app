@@ -51,11 +51,11 @@ function ParticipantView(props) {
           controls={true}
           muted={false}
           playing={true}
-          //
           url={videoStream}
+          className='rplayer'
           //
-          width={"880px"}
-          height={"495px"}
+          width='100%'
+          height='100%'
           onError={(err) => {
             console.log(err, "participant video error");
           }}
@@ -125,7 +125,7 @@ function JoinLive({meetingId}){
 
   return (
       <div className="golive">
-          <div className="golivebox joinlivebox">
+          <div className="joinlivebox">
               {
                   authToken && meetingId ?
                   (

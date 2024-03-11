@@ -729,17 +729,16 @@ hr{
 .vileft{
   width: 75%;
   overflow: scroll;
+  @media screen and (max-width:1000px) {
+    width: 100%;
+  }
 }
 .videoholder{
-  height: 495px;
   margin: 20px;
-  border: 2px solid gray;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 10px;
-  /* background-color: rgb(35, 35, 35); */
-  background-color: rgb(148, 148, 148);
 }
 .videotitle{
   font-size: 18px;
@@ -763,6 +762,9 @@ hr{
   flex-direction: column;
   width: 25%;
   border-left: 1px solid rgb(51, 51, 51);
+  @media screen and (max-width:1000px) {
+    display: none;
+  }
 }
 .chathead{
   text-align: center;
@@ -963,6 +965,7 @@ hr{
   color: rgb(136, 136, 255);
 }
 .golive{
+  width: 100%;
   div{
     text-align: center;
   }
@@ -1094,12 +1097,59 @@ hr{
     border-bottom: 1px solid rgb(255, 255, 255);
   }
 }
-.joinlivebox{
-  width: 880px;
-  height: 495px;
-  border: none;
-  background-color: rgb(36, 36, 36);
+.rplayer{
+  width: 100%;
+  height: 100%;
 }
+.joinlivebox{
+
+
+  border: 2px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(87deg, rgba(240,0,0,1) 24%, rgba(22,4,232,1) 47%, rgba(184,13,193,0.987079866126138) 75%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  div{
+    font-size: 25px;
+    color: gray;
+  }
+
+  background-color: black;
+  border: 5px solid rgb(87, 87, 87);
+
+  height: 485px;
+
+  @media screen and (max-width:1200px) {
+    height: 400px;
+  }
+  @media screen and (max-width:700px) {
+    height: 250px;
+  }
+  @media screen and (max-width:500px) {
+    height: 200px;
+    border: 2px solid rgb(87, 87, 87);
+  }
+  @media screen and (max-width:400px) {
+    height: 150px;
+  }
+  @media screen and (max-width:310px) {
+    height: 110px;
+  }
+}
+.pview{
+  width: 100%;
+  height: 100%; 
+ }
+ .cview{
+   width: 100%;
+   height: 100%; 
+  }
+  .sview{
+   width: 100%;
+   height: 100%; 
+  }
 .hiconskeleton{
   width: 30px;
   height: 30px;
