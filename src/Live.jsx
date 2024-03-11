@@ -12,21 +12,21 @@ function Live({liveStreams}){
             <div className="livet">LIVE NOW</div>
             <div className="livecontainer">
                 { 
-                    liveStreams && liveStreams.length ? 
+                    // liveStreams && liveStreams.length ? 
 
-                        liveStreams.map(live=>(
-                            <div key={live.id} className='livepanel'>
-                                <Panel
-                                    bg={liveThumb.current[9]} 
-                                    zoom={19} 
-                                    isLive={true}
-                                    title={live.title}
-                                    publisher={live.publisher}
-                                    viewers={live.viewers}
-                                    liveId={live.id}
-                                />
-                            </div>
-                        )):
+                    //     liveStreams.map(live=>(
+                    //         <div key={live.id} className='livepanel'>
+                    //             <Panel
+                    //                 bg={liveThumb.current[9]} 
+                    //                 zoom={19} 
+                    //                 isLive={true}
+                    //                 title={live.title}
+                    //                 publisher={live.publisher}
+                    //                 viewers={live.viewers}
+                    //                 liveId={live.id}
+                    //             />
+                    //         </div>
+                    //     )):
 
                         [...Array(12)].map((_,index)=>(
                             <div key={index} className='livepanel'><Panel zoom={19} isLive={true}/></div>
