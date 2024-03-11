@@ -21,8 +21,6 @@ function Viewer(){
         }
     },[]);
 
-    console.log(currLive);
-
     return (
         <div className="vi">
             <div className='vileft'>

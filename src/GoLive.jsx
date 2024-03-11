@@ -76,8 +76,6 @@ function SpeakerView({joined,meetingId}) {
         return speakerParticipants;
       }, [participants]);
 
-      // console.log("lele",speakers[0]);
-
       useEffect(()=>{
         enableScreenShare();
       },[]);

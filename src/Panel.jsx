@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import Mtitle from "./Mtitle";
 import { useContext } from "react";
 import { ColContext } from "./Body";
+import thumbnail from "./icons/thumbnail.jpeg";
 
 function Panel({isFrame,zoom,bg,isLive,title,viewers,publisher,liveId,duration}){
 
@@ -18,7 +19,7 @@ function Panel({isFrame,zoom,bg,isLive,title,viewers,publisher,liveId,duration})
     }
 
     return (
-        <div className="panel" style={{width:width,height:height,backgroundImage:`url(${bg})`}} onClick={handlePanel}>
+        <div className="panel" style={{backgroundImage:`url(${thumbnail})`}} onClick={handlePanel}>
             <div className={`opacity ${isLive || duration ?"":"loadingskeleton psk"}`}></div>
             {isLive && viewers!==undefined && <div className="as plive">● {viewers}</div>}
             {isLive && <Mtitle zoom={zoom} titlex={title} publisher={publisher} />}
@@ -27,3 +28,4 @@ function Panel({isFrame,zoom,bg,isLive,title,viewers,publisher,liveId,duration})
     );
 }
 export default Panel;
+//width:width,height:height

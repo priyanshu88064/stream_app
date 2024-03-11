@@ -48,9 +48,7 @@ function Body(){
     }
 
     useEffect(()=>{
-        setTimeout(() => {
-            fetchData();
-        }, 5000);
+        fetchData();
     },[]);
 
     return (

@@ -77,10 +77,6 @@ function SpeakerView({joined,meetingId}) {
         return speakerParticipants;
       }, [participants]);
 
-    useEffect(()=>{
-      console.log("inside speaker view JoinLive.jsx");
-    },[]);
-
     return (
       <div className="sview">
         { 

@@ -2,8 +2,6 @@ import Panel from './Panel';
 
 function Frame({thumbCurrent,animClass}){
 
-    console.log("lol",thumbCurrent)
-
     return (
         <div className={`frame ${animClass}`}>
             <div className="bigM">
