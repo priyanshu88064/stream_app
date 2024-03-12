@@ -10,7 +10,6 @@ export async function getGames(){
     }catch(error){
 
         console.log("Error: "+error);
-        throw error;
         
     }
 }

@@ -10,7 +10,6 @@ export async function getVideos(){
     }catch(error){
 
         console.log("Error: "+error);
-        throw error;
 
     }
 }

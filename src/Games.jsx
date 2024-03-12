@@ -20,7 +20,7 @@ function Games(){
             <div className="gamest">GAMES</div>
             <div className="gamescontainer">
                 {
-                    games.length ?
+                    games && games.length ?
                     games.map(game=>(
                         <div key={game.id} className="gamespanel">
                             <Gamepanel name={game.name}/>
