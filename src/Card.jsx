@@ -1,16 +1,17 @@
-import { useNavigate } from "react-router-dom";
-import {followers, profile2,eye,userplus} from "./ImageHandler";
+import { Link } from "react-router-dom";
+import {followers,eye,userplus} from "./ImageHandler";
 
 function Card({Name,profileImg}){
 
-    const navigate = useNavigate();
-
-    const handleChannel = ()=>{
-        navigate("/channel");
-    }
-
     return (
-        <div className="card" onClick={handleChannel}>
+        <Link
+            to={{
+                pathname:"/channel",
+            }}
+            state={{Name,profileImg}}
+            style={{ textDecoration: 'none', color: 'inherit' }}
+        >
+            <div className="card">
             {
                 Name && profileImg ?
                 <>
@@ -28,6 +29,7 @@ function Card({Name,profileImg}){
                 </>
             }
         </div>
+        </Link>
     );
 }
 export default Card;

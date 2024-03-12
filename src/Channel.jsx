@@ -1,11 +1,17 @@
 import { useState } from "react";
-import {profile, tick} from "./ImageHandler";
+import {tick} from "./ImageHandler";
 import Tags from "./Tags";
 import Videos from './Videos';
+import { useLocation } from "react-router-dom";
 
 function Channel({all,currLive}){
 
     const [activeItem,setActiveItem] = useState("Live");
+
+    const location = useLocation();
+    const state = location.state;
+    const img = currLive?.publisher?.profileImg || state?.profileImg;
+    const name = currLive?.publisher?.name || state?.Name;
 
     const handleItem = item=>{
         setActiveItem(item);
@@ -15,9 +21,9 @@ function Channel({all,currLive}){
         <div className="channel">
             <div className="channelhead">
                <div className="cchead">
-                    <div className="cpfpimg"><img src={ currLive?.publisher?.profileImg || profile} alt="Profile"/></div>
+                    <div className="cpfpimg"><img src={img} alt="Profile"/></div>
                     <div className="cinfo">
-                        <div className="ctitle"><div>{currLive?.publisher?.name}</div> <img src={tick} alt="tick"/></div>
+                        <div className="ctitle"><div>{name}</div> <img src={tick} alt="tick"/></div>
                         <div className="cmeta"><span>1.8M</span> Followers <span>3</span> Following</div>
                     </div>
                </div>

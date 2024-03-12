@@ -13,7 +13,7 @@ function HeleStats({thumb}){
         <div className="helestats">
             <div className="heleimg">
                 {
-                    thumb?.thumbnail ? <img src={icon} alt="icon" onClick={handleChannel}/> : <div className="hiconskeleton"></div>
+                    thumb?.thumbnail ? <img src={thumb?.publisher?.profileImg} onClick={handleChannel}/> : <div className="hiconskeleton"></div>
                 }
             </div>
             <div className="c2">

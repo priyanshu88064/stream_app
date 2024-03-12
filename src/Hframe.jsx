@@ -10,7 +10,7 @@ function Hframe({thumb,all}){
             {
                 thumb && thumb.length ? [...Array(length)].map((_,index)=>(
                     <div className='hele' key={index}>
-                        <Panel zoom={19} duration={thumb[index].duration} isLive={false}/>
+                        <Panel bg={thumb[index].thumbnail} zoom={19} duration={thumb[index].duration} isLive={false}/>
                         <HeleStats thumb={thumb[index]}/>
                     </div>
                 ))

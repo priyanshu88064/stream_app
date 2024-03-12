@@ -12,7 +12,7 @@ function Mtitle({zoom,titlex,publisher}){
     return (
         <div className="mtitle" >
             <div className="micon">
-                {publisher ? <img src={icon} alt="Icon"/> : <div className="miconskeleton"></div>}
+                {publisher ? <img src={publisher?.profileImg}/> : <div className="miconskeleton"></div>}
             </div>
             <div className="mpart">
                 <div className="mvideotitle" style={{fontSize:fontS}}>

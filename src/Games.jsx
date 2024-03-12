@@ -23,7 +23,7 @@ function Games(){
                     games && games.length ?
                     games.map(game=>(
                         <div key={game.id} className="gamespanel">
-                            <Gamepanel name={game.name}/>
+                            <Gamepanel name={game.name} gameimg={game.image}/>
                         </div>
                     )) :
                     [...Array(14)].map((_,index)=>(

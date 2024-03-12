@@ -1,6 +1,6 @@
 import gameimg from "./icons/thumbnail.jpeg";
 
-function Gamepanel({isStat,name}){
+function Gamepanel({name,gameimg}){
     return (
         <div className="gamepanel">
             {
