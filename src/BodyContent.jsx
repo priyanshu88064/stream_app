@@ -74,7 +74,7 @@ function BodyContent({liveMerged,videoGallery}){
     }
 
     return (
-        <div className="bcontent">
+        <div className="bcontent pbb">
             <div className="framecontainer">
                 <div className="frameleft" onClick={handleLeft}>&#x276E;</div>
                 <Frame thumbCurrent={thumbCurrent} animClass={isFramAnim}/>

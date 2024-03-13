@@ -77,6 +77,9 @@ html,body{
 .bpanelup{
   border-bottom: 1px solid rgb(51, 51, 51);
 }
+.pbb{
+  padding-bottom: 50px;
+}
 .bcontent{
   flex-grow: 1;
   overflow: scroll;
@@ -614,10 +617,16 @@ hr{
   font-size: 12px;
   padding: 3px;
 }
+.mbb{
+  margin-bottom: 100px;
+}
 .live{
   overflow: scroll;
-  padding: 20px 25px 0 25px;
+  padding: 20px 25px 0px 25px;
   width: 100%;
+  @media screen and (max-width:500px) {
+    margin-bottom: 100px;
+  }
 }
 .livecontainer{
   display: flex;
