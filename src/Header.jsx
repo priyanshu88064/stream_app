@@ -1,8 +1,8 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import HeaderUser from "./HeaderUser";
-import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { createvideo, home, logo } from "./ImageHandler";
+import { isMobile } from './service/DeviceDetection';
 
 function Header({setIsCreateNewLive,setUserObject}){
     
@@ -12,6 +12,10 @@ function Header({setIsCreateNewLive,setUserObject}){
     const [btnBack,setBtnBack] = useState("rgb(92,0,205)");
 
     const handleGoLive = ()=>{
+        if(isMobile.any()){
+            alert("Oops! Live Streaming can only be started from PC")
+            return;
+        }
         setIsCreateNewLive(curr=>!curr);
         setBtnText(text=>{
             if(text==="LIVE")return "HOME";

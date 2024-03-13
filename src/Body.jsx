@@ -13,13 +13,14 @@ import { getVideos } from "./api/getVideos";
 import { getLive } from "./api/getLive";
 import { Merge } from "./service/MergeStreamer";
 import Login from "./Login";
+import { isMobile } from './service/DeviceDetection';
 
 export const ColContext = createContext();
 export const DataContext = createContext();
 
 function Body(){
 
-    const [isCol,setIsCol] = useState(false);
+    const [isCol,setIsCol] = useState(isMobile.any()?true:false);
     const [streamers,setStreamers] = useState([]);
     const [videoGallery,setVideoGallery] = useState([]);
     const [liveMerged,setLiveMerged] = useState([]);
