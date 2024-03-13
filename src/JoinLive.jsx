@@ -3,13 +3,11 @@ import {
   MeetingConsumer,
   useMeeting,
   useParticipant,
-  Constants,
 } from "@videosdk.live/react-sdk";
 import {authToken} from "./api/API";
 import ReactPlayer from "react-player"; 
 import { useEffect, useRef, useState,useMemo } from "react";
-import {golive, play} from "./ImageHandler";
-import { startLive, stopLive } from "./api/streamerAccount";
+import {play} from "./ImageHandler";
 
 function ParticipantView(props) {
   const micRef = useRef(null);
@@ -64,18 +62,18 @@ function ParticipantView(props) {
   );
 }
 
-function SpeakerView({joined,meetingId}) {
+function SpeakerView({meetingId}) {
     const { participants } = useMeeting();
 
     
     const speakers = useMemo(() => {
       const speakerParticipants = [...participants.values()].filter(
         (participant) => {
-          return participant.displayName == meetingId;
+          return participant.displayName === meetingId;
         }
         );
         return speakerParticipants;
-      }, [participants]);
+      }, [participants,meetingId]);
 
     return (
       <div className="sview">
@@ -110,10 +108,10 @@ function Container({joined,setJoined,meetingId}) {
 
   return (
     <div className="cview">
-      {joined && joined == "JOINED" ? <SpeakerView joined={joined} meetingId={meetingId}/> : joined && joined == "JOINING" ? (
+      {joined && joined === "JOINED" ? <SpeakerView joined={joined} meetingId={meetingId}/> : joined && joined === "JOINING" ? (
         <p>Loading...</p>
       ) : (
-        <div className="playlive" onClick={joinMeeting}><img src={play} /></div>
+        <div className="playlive" onClick={joinMeeting}><img src={play} alt="" /></div>
       )}  
     </div>
   );

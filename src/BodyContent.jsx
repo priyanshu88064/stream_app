@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import Frame from './Frame';
 import Recommended from "./Recommended";
-import {thumbArray} from "./ImageHandler";
 
 function BodyContent({liveMerged,videoGallery}){
 
@@ -12,9 +11,6 @@ function BodyContent({liveMerged,videoGallery}){
         liveMerged[3],
         liveMerged[4]
     ]);
-    const r1 = useRef([thumbArray[2],thumbArray[1],thumbArray[0],thumbArray[10]]);
-    const r2 = useRef([thumbArray[0],thumbArray[3],thumbArray[5],thumbArray[7]]);
-    const r3 = useRef([thumbArray[11],thumbArray[6],thumbArray[8],thumbArray[4]]);
     const currPos = useRef(1);
     const [isFramAnim,setFrameAnim] = useState('');
 

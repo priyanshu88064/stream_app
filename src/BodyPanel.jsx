@@ -63,7 +63,7 @@ function BodyPanel({isCol,setIsCol,liveMerged}){
                             Name={live.publisher.name}
                             watching={live.viewers}
                             font={"12px"}
-                            icon={jonnyicon}
+                            icon={live.publisher.profileImg}
                             isCol={isCol}
                             liveId={live.id}
                         />

@@ -8,7 +8,6 @@ import {
 import {authToken,createMeeting} from "./api/API";
 import ReactPlayer from "react-player"; 
 import { useEffect, useRef, useState,useMemo } from "react";
-import {golive} from "./ImageHandler";
 import { startLive, stopLive } from "./api/streamerAccount";
   
 function ParticipantView(props) {
@@ -65,12 +64,12 @@ function ParticipantView(props) {
 }
   
 function SpeakerView({joined,meetingId}) {
-      const { participants,enableScreenShare,disableScreenShare,startHls,leave } = useMeeting();
+      const { participants,enableScreenShare} = useMeeting();
   
       const speakers = useMemo(() => {
         const speakerParticipants = [...participants.values()].filter(
           (participant) => {
-            return participant.mode == Constants.modes.CONFERENCE;
+            return participant.mode === Constants.modes.CONFERENCE;
           }
         );
         return speakerParticipants;
@@ -108,7 +107,7 @@ function Container({joined,setJoined,meetingId}) {
   
     return (
       <div className="cview">
-        {joined && joined == "JOINED" ? <SpeakerView joined={joined}/> : joined && joined == "JOINING" ? (
+        {joined && joined === "JOINED" ? <SpeakerView joined={joined}/> : joined && joined === "JOINING" ? (
           <p>Joining the meeting...</p>
         ) : (
           <button onClick={joinMeeting}>Click to give Screen Permissions</button>
