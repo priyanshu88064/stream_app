@@ -26,7 +26,7 @@ function Games(){
                             <Gamepanel name={game.name} gameimg={game.image}/>
                         </div>
                     )) :
-                    [...Array(14)].map((_,index)=>(
+                    [...Array(21)].map((_,index)=>(
                         <div key={index} className="gamespanel">
                             <Gamepanel/>
                         </div>

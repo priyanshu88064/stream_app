@@ -1,7 +1,4 @@
 import Panel from './Panel';
-import { useEffect, useRef, useState } from 'react';
-import {thumbArray} from "./ImageHandler";
-import { getLive } from './api/getLive';
 
 function Live({liveStreams}){
 

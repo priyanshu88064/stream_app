@@ -1,13 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import Mtitle from "./Mtitle";
-import { useContext } from "react";
-import { ColContext } from "./Body";
-import thumbnail from "./icons/thumbnail.jpeg";
 
 function Panel({isFrame,zoom,bg,isLive,title,viewers,publisher,liveId,duration}){
-
-    const isCol = useContext(ColContext);
-    const add = isCol?3:0;
 
     const navigate = useNavigate();
 

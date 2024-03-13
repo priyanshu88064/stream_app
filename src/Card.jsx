@@ -15,7 +15,7 @@ function Card({Name,profileImg}){
             {
                 Name && profileImg ?
                 <>
-                    <div className="cardimg"><img src={profileImg}/></div>
+                    <div className="cardimg"><img src={profileImg} alt=""/></div>
                     <div className="cardname">{Name}</div>
                     <div className="cardmeta"><img src={followers} alt="followers"/>500k <img src={eye} alt="eye"/>2.3M</div>
                     <hr/>

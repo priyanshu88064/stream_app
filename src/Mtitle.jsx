@@ -1,5 +1,3 @@
-import icon from "./icons/jonathan.jpg"
-
 function Mtitle({zoom,titlex,publisher}){
 
     const fontS = zoom < 20 ? "12px":"14px";
@@ -12,14 +10,14 @@ function Mtitle({zoom,titlex,publisher}){
     return (
         <div className="mtitle" >
             <div className="micon">
-                {publisher ? <img src={publisher?.profileImg}/> : <div className="miconskeleton"></div>}
+                {publisher ? <img src={publisher?.profileImg} alt=""/> : <div className="miconskeleton"></div>}
             </div>
             <div className="mpart">
                 <div className="mvideotitle" style={{fontSize:fontS}}>
-                    {title ? title : <div className="loadingskeleton"></div>}
+                    {title ? <span className="cs">{title}</span> : <div className="loadingskeleton"></div>}
                 </div>
                 <div className="mmeta" style={{fontSize:fontMeta}}>
-                    {publisher ? publisher.name : <div className="loadingskeleton"></div>}
+                    {publisher ? <span className="css">{publisher.name}</span> : <div className="loadingskeleton"></div>}
                 </div>
             </div>
         </div>

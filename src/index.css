@@ -266,6 +266,9 @@ html,body{
   font-size: 12px;
   font-weight: 900;
   box-shadow: 5px 5px 10px rgb(48, 48, 48);
+  @media screen and (max-width:500px) {
+    font-size: 7px;
+  }
 }
 .opacity{
   position: absolute;
@@ -286,6 +289,19 @@ html,body{
 .micon > img{
   width: 40px;
   border-radius: 50%;
+  @media screen and (max-width:500px) {
+    width: 25px;
+  }
+}
+.cs{
+  @media screen and (max-width:500px) {
+    font-size: 10px;
+  }
+}
+.css{
+  @media screen and (max-width:500px) {
+    font-size: 6px;
+  }
 }
 .micon{
   margin-right: 10px;
@@ -435,6 +451,11 @@ hr{
   flex-direction: column;
   margin: 20px 25px 0 25px;
 }
+.ttle{
+  @media screen and (max-width:500px) {
+    font-size: 13px;
+  }
+}
 .hele{
   width: 23%;
   height: 60%;
@@ -471,12 +492,18 @@ hr{
 .heletitle{
   font-size: 15px;
   color: rgb(207, 207, 207);
+  @media screen and (max-width:500px) {
+    font-size: 10px;
+  }
 }
 .heleacccount{
   font-size: 12px;
   margin-top: 5px;
   color: gray;
   width: 70%;
+  @media screen and (max-width:500px) {
+    font-size: 8px;
+  }
 }
 .c2{
   width: 85%;
@@ -485,6 +512,9 @@ hr{
   font-size: 11px;
   margin-top: 5px;
   color: gray;
+  @media screen and (max-width:500px) {
+    font-size: 6px;
+  }
 }
 .heleimg{
   width: 15%;
@@ -526,6 +556,13 @@ hr{
   margin-top: 10px;
   font-size: 13px;
   font-weight: 700;
+
+  @media screen and (max-width:1000px) {
+    font-size: 11px;
+  }
+  @media screen and (max-width:800px) {
+    font-size: 8px;
+  }
 }
 .gpstat{
   font-size: 10px;
@@ -565,6 +602,9 @@ hr{
   font-size: 10px;
   border-radius: 3px;
   padding: 3px;
+  @media screen and (max-width:500px) {
+    font-size: 8px;
+  }
 }
 .gametag{
   background-color: rgb(35, 35, 35);
@@ -582,13 +622,13 @@ hr{
 .livecontainer{
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   height: 100%;
 }
 .livepanel{
-  margin-bottom: 25px;
-  width: 30%;
-  height: 28%;
+  width: 24%;
+  height: 25%;
+  margin-right: 10px;
+  margin-bottom: 10px;
   @media screen and (max-width:1200px) {
     height: 20%;
   }
@@ -596,10 +636,11 @@ hr{
     width: 48%;
   }
   @media screen and (max-width:700px) {
-    height: 15%;
-  }
-  @media screen and (max-width:700px) {
     width: 95%;
+    height: 20%;
+  }
+  @media screen and (max-width:500px) {
+    width: 80%;
     height: 20%;
   }
 }
@@ -607,6 +648,9 @@ hr{
   font-size: 18px;
   margin-bottom: 30px;
   font-weight: 500;
+  @media screen and (max-width:500px) {
+    font-size: 13px;
+  }
 }
 .videos{
   overflow: scroll;
@@ -622,6 +666,9 @@ hr{
   font-size: 18px;
   margin-bottom: 15px;
   font-weight: 500;
+  @media screen and (max-width:500px) {
+    font-size: 13px;
+  }
 }
 .videospanel{
   margin-bottom: 15px;
@@ -639,10 +686,44 @@ hr{
   font-size: 18px;
   margin-bottom: 15px;
   font-weight: 500;
+  @media screen and (max-width:500px) {
+    font-size: 13px;
+  }
 }
 .gamespanel{
-  margin-bottom: 10px;
-  margin-right: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  width: 19%;
+
+  @media screen and (max-width:800px) {
+    width: 32%;
+  }
+  @media screen and (max-width:350px) {
+    width: 49%;
+  }
+}
+.gst{
+  width: 150px;
+  height: 150px;
+
+  @media screen and (max-width:1000px) {
+    width: 100px;
+    height: 100px;
+  }
+  @media screen and (max-width:800px) {
+    width: 90px;
+    height: 90px;
+  }
+  @media screen and (max-width:500px) {
+    width: 80px;
+    height: 80px;
+  }
+  @media screen and (max-width:350px) {
+    width: 60px;
+    height: 60px;
+  }
 }
 .channel{
   width: 100%;
@@ -665,6 +746,9 @@ hr{
   font-size: 18px;
   color: rgb(217, 217, 217);
   display: flex;
+  @media screen and (max-width:500px) {
+    font-size: 12px;
+  }
 }
 .ctitle > div{
   margin-right: 5px;
@@ -673,6 +757,9 @@ hr{
   font-size: 15px;
   color:gray;
   margin-top: 20px;
+  @media screen and (max-width:500px) {
+    font-size: 10px;
+  }
 }
 .cmeta > span{
   color: rgb(217, 217, 217);
@@ -744,11 +831,17 @@ hr{
   font-size: 18px;
   font-weight: 500;
   margin: 20px;
+  @media screen and (max-width:500px) {
+    font-size: 10px;
+  }
 }
 .videometa{
   font-size: 15px;
   margin: 20px;
   color: rgb(172, 172, 172);
+  @media screen and (max-width:500px) {
+    font-size: 8px;
+  }
 }
 .vileft > hr{
   margin-top: 30px ;
@@ -828,42 +921,76 @@ hr{
   width: 100%;
   overflow: scroll;
   padding: 30px;
+  padding-right: 0;
 }
 .stitle{
   font-size: 18px;
   font-weight: 500;
+  @media screen and (max-width:500px) {
+    font-size: 13px;
+  }
 }
 .scont{
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap:wrap;
+  justify-content:left;
+
+  @media screen and (max-width:500px) {
+    justify-content: space-around;
+  }
 }
 .card{
   background-color: rgb(25, 25, 25);
   padding: 15px;
   border-radius: 10px;
   margin-top: 30px;
-  margin-right: 20px;
+  margin-right: 10px;
   transition: background-color 200ms;
   cursor: pointer;
+  width: 200px;
+
+  @media screen and (max-width:1210px) {
+    width: 150px;
+  }
+  @media screen and (max-width:500px) {
+    width: 120px;
+    padding: 5px;
+    padding-bottom: 10px;
+  }
 }
 .card:hover{
   background-color: rgb(57, 57, 57);
 }
-
+.cardimg{
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .cardimg > img{
   border-radius: 50%;
   width: 130px;
   height: 130px;
+  @media screen and (max-width:500px) {
+    width: 80px;
+    height: 80px;
+  }
 }
 .cardname{
   font-size: 13px;
   text-align: center;
   margin-top: 5px;
+  @media screen and (max-width:500px) {
+    font-size: 10px;
+  }
 }
 .cardmeta{
   font-size: 11px;
   text-align: center;
   margin-top: 5px;
+  @media screen and (max-width:500px) {
+    font-size: 7px;
+  }
 }
 .cardmeta > img{
   transform: translateY(3px);
@@ -879,6 +1006,9 @@ hr{
   font-size: 12px;
   text-align:center;
   font-weight: 400;
+  @media screen and (max-width:500px) {
+    font-size: 9px;
+  }
 }
 .cardfollow > img{
   transform: translateY(6px);
@@ -1188,8 +1318,15 @@ hr{
 }
 .playlive{
   cursor: pointer;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   img{
     width: 150px;
+    @media screen and (max-width:500px) {
+      width: 60px;
+    }
   }
 }
 .btngolive{

@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import icon from "./icons/jonathan.jpg"
 
 function HeleStats({thumb}){
 
@@ -13,7 +12,7 @@ function HeleStats({thumb}){
         <div className="helestats">
             <div className="heleimg">
                 {
-                    thumb?.thumbnail ? <img src={thumb?.publisher?.profileImg} onClick={handleChannel}/> : <div className="hiconskeleton"></div>
+                    thumb?.thumbnail ? <img src={thumb?.publisher?.profileImg} alt="" onClick={handleChannel}/> : <div className="hiconskeleton"></div>
                 }
             </div>
             <div className="c2">

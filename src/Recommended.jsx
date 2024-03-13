@@ -4,7 +4,7 @@ function Recommended({title,thumb}){
     return (
         <div className="recommended">
             <hr/>
-            <div>{title}</div>
+            <div className="ttle">{title}</div>
             <Hframe thumb={thumb}/>
         </div>
     );
