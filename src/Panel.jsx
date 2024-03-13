@@ -11,7 +11,7 @@ function Panel({isFrame,zoom,bg,isLive,title,viewers,publisher,liveId,duration})
 
     return (
         <div className="panel" style={{backgroundImage:`url(${bg})`}} onClick={handlePanel}>
-            <div className={`${isLive?"opacity":""} ${isLive || duration ?"":"loadingskeleton psk"}`}></div>
+            <div className={`${isLive || !duration?"opacity":""} ${isLive || duration ?"":"loadingskeleton psk"}`}></div>
             {isLive && viewers!==undefined && <div className="as plive">● {viewers}</div>}
             {isLive && <Mtitle zoom={zoom} titlex={title} publisher={publisher} />}
             {!isLive && duration && <div className="duration">{duration}</div>}

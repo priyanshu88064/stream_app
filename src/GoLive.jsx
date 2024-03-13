@@ -191,7 +191,6 @@ function GoLive({msg,setMsg,userObject,title}){
                     )
                 }
             </div>
-            {/* <div className={`goliveenable ${joined==="JOINED"?"golivenablejoined":""}`} onClick={joined==="JOINED"?leaveMeeting:getMeetingAndToken}>{joined!=="JOINED" && <img src={golive}/>}{msg}</div> */}
         </div>
     );
   

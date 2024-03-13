@@ -52,6 +52,7 @@ function GoLiveContainer({userObject}){
                    <input type='text' placeholder='Enter Description (optional)'/>
                    <button className={`goliveenable ${msg==="STOP STREAMING"?"golivenablejoined":""}`} onClick={handleMsg}><img src={golive}/>{msg}</button>
                 </form>
+                <div className='warning'>*Please note: Live streaming functionality is currently in demo mode and may not meet industry standards.</div>
             </div>
             <div className='glright'>
                 <div className='glrhead'>LIVE CHATS</div>

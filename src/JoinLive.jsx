@@ -125,7 +125,7 @@ function JoinLive({meetingId}){
       <div className="golive">
           <div className="joinlivebox">
               {
-                  authToken && meetingId ?
+                  authToken && meetingId && meetingId!=="null" ?
                   (
                         <MeetingProvider
                           config={{
@@ -144,7 +144,7 @@ function JoinLive({meetingId}){
                           </MeetingConsumer>
                         </MeetingProvider>
                       ) : (
-                      <></>
+                      <>This is a Dummy stream. Open another stream or start your own live stream.</>
                   )
               }
           </div>

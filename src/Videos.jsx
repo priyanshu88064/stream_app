@@ -6,8 +6,6 @@ function Videos({pad,all}){
 
     const {videoGallery} = useContext(DataContext);
 
-    console.log(videoGallery);
-
     return (
         <div className="videos" style={{padding:pad?"0px":""}}>
             <div className="videost">VIDEOS</div>
