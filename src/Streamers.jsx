@@ -1,6 +1,4 @@
-import { useEffect, useState } from "react";
 import Card from "./Card";
-import { getStreamers } from "./api/getStreamers";
 
 function Streamers({streamers}){
     return (

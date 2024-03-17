@@ -3,11 +3,9 @@ import homeicon from "./icons/home.svg"
 import liveicon from "./icons/live.svg"
 import videoicon from "./icons/videos.svg"
 import gameicon from "./icons/game.svg"
-import jonnyicon from "./icons/jonathan.jpg"
 import recicon from "./icons/recommended.svg"
 import {collapse, streamer} from "./ImageHandler"
 import { useState } from "react";
-import { useParams } from "react-router-dom";
 
 function BodyPanel({isCol,setIsCol,liveMerged}){
 

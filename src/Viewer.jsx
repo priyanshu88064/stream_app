@@ -1,9 +1,8 @@
 import Channel from './Channel';
 import { bubble, send } from './ImageHandler';
-import { useContext, useEffect, useRef, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { DataContext } from './Body';
 import { useNavigate, useParams } from 'react-router-dom';
-import GoLive from './GoLive';
 import JoinLive from './JoinLive';
 
 function Viewer(){
@@ -16,7 +15,7 @@ function Viewer(){
     const navigate = useNavigate();
 
     useEffect(()=>{
-        if(currLive==undefined){
+        if(currLive===undefined){
             navigate("/");
         }
     },[]);

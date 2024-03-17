@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Body from "./Body";
 import Header from "./Header";
-import GoLive from "./GoLive";
 import GoLiveContainer from "./GoLiveContainer";
 
 function Home(){
