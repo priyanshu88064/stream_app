@@ -157,7 +157,7 @@ html,body{
 .login{
   margin-left: 10px;
   margin-right: 30px;
-  background-color: rgb(55, 55, 167);
+  background:rgb(78, 78, 78);
   border-radius: 3px;
   font-size: 13px;
   cursor: pointer;
@@ -1344,7 +1344,7 @@ hr{
 .btngolive{
   color-scheme: light only;
   cursor: pointer;
-  padding: 3px 15px 3px 15px;
+  padding: 4px 15px 4px 15px;
   display: flex;
   align-items: center;
   border-radius: 5px;

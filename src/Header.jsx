@@ -46,13 +46,11 @@ function Header({setIsCreateNewLive,setUserObject}){
                 <input type="text" id="search" placeholder="Search for streamers,games,videos" autoComplete="off"/>
             </div>
             <div className="hlast">
+                <div className={`btngolive ${btnBack.length>15?"setanim":""}`} style={{background:btnBack}} onClick={isAuthenticated?handleGoLive:loginWithRedirect}><img src={btnText==="LIVE"?createvideo:home}/>{btnText}</div>
                 {
                     isAuthenticated ?
-                    <>
-                        <div className={`btngolive ${btnBack.length>15?"setanim":""}`} style={{background:btnBack}} onClick={handleGoLive}><img src={btnText==="LIVE"?createvideo:home}/>{btnText}</div>
-                        <HeaderUser user={user} logoutAction={logout} setUserObject={setUserObject}/>
-                    </> :
-                    <div className={`login ${btnBack.length>15?"setanim":""}`} style={{background:btnBack}} onClick={loginWithRedirect}>LOGIN</div>
+                    <HeaderUser user={user} logoutAction={logout} setUserObject={setUserObject}/> :
+                    <div className={`login`} onClick={loginWithRedirect}>LOGIN</div>
                 }
             </div>
         </div>
