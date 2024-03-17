@@ -161,6 +161,10 @@ html,body{
   border-radius: 3px;
   font-size: 13px;
   cursor: pointer;
+  @media screen and (max-width:500px) {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
 }
 .item{
   display: flex;
@@ -1363,7 +1367,7 @@ hr{
     margin-right: 30px;
     width: 40px;
     font-size: 10px;
-    padding: 1px 15px 1px 15px;
+    padding: 2px 15px 2px 15px;
   }
 }
 .setanim{
